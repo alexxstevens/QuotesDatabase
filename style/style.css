@@ -51,6 +51,11 @@ div.logo {
     font-weight: bold;
 }
 
+a.nav-link-admin {
+    font-size: .2em;
+    padding: ;
+
+}
 
 div.logo h1 {
     color: white;
@@ -98,13 +103,7 @@ tr:nth-child(even) {
 
 
 
-
-
-
-
-
-
-
+/* button styling */
 .btn {
     background-color:  RGB(54,174,216);
     border: none;
@@ -124,9 +123,60 @@ tr:nth-child(even) {
 
 
 
+/* submit styling */
+div.contact-container select, div.contact-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+div.contact-container input[type=submit] {
+  background-color: #36add8;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; 
+  width: 65vw;
+}
 
 
+div.contact-container input[type=submit]:hover {
+  background-color: #36add8;
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
 
+div.contact-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ h2.contact-container {
+    text-align: center;
+    font-size: 2em;
+}
+
+ p.contact-container {
+    margin-left: 10%;
+}
+
+a.link {
+    font-size: 1.5em;
+}
+
+p.center {
+    text-align: center;
+    font-weight: bold;
+}
 
 
 /* Media qurey section */

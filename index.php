@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    require_once('util/valid_admin.php');
     require('config/Database.php');
     require('models/Author.php');
     require('models/Category.php');
@@ -9,19 +11,18 @@
         $action = filter_input(INPUT_GET, 'action');
         if ($action == NULL) {
             $action = 'show_quotes';
-        } else {
-            $action = 'show_quotes';
         }
     }
 
+  //populate table
   if ($action == 'show_quotes') {
         //pull data for variables
         if(isset($_GET['authorID'])){
-        $authorID = $_GET['authorID'];}
+        $authorID = filter_input(INPUT_GET, 'authorID', FILTER_VALIDATE_INT);}
         if(isset($_GET['categoryID'])){
-        $categoryID = $_GET['categoryID'];}
+        $categoryID = filter_input(INPUT_GET, 'categoryID', FILTER_VALIDATE_INT);}
         if(isset($_GET['quote'])){
-        $quote = $_GET['quote'];}
+        $quote = filter_input(INPUT_GET, 'quote', FILTER_SANITIZE_SPECIAL_CHARS);}
         // call function to populate dropdowns
         $all_authors = get_authors();
         $all_categories = get_categories();
@@ -41,7 +42,32 @@
         $auth_quotes = view_by_author();
         $random_quotes = view_random(); 
         include_once('view/quote_list.php'); }
-  } else {
-        $action =='show_inventory';
+    //call add form
+  } else if ($action == 'show_add_form') {
+        // call function to populate dropdowns
+        $all_authors = get_authors();
+        $all_categories = get_categories();
+        include('submit.php');
+
+    //pull add inputs
+  } else if ($action == 'submit_quote') {
+        //run
+        if(isset($_GET['authorID'])){
+        $authorID = filter_input(INPUT_GET, 'authorID', FILTER_VALIDATE_INT);}
+        if(isset($_GET['categoryID'])){
+        $categoryID = filter_input(INPUT_GET, 'categoryID', FILTER_VALIDATE_INT);}
+        if(isset($_GET['quote'])){
+        $quote = filter_input(INPUT_GET, 'quote', FILTER_SANITIZE_SPECIAL_CHARS);}
+        if(isset($_GET['quote'])){
+        $quote = preg_replace("/[^A-Za-z0-9. ]/", '', $quote);}
+            //invalid inputs
+            if ($authorID == NULL || $categoryID == NULL || $quote == NULL) {
+                $error = "Invalid entry. Check all fields and try again.";
+                include('errors/error.php');
+            //add vehicle
+            } else {
+                submit_quote();
+                header("Location: .?quoteID=$quoteID");}
+        $action =='show_quotes';
   }
         ?>

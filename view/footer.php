@@ -1,4 +1,7 @@
-    
+    <br><br>
+    <footer>
+      <p class="center">&copy; 2020 Quotes! the database </p>
+    </footer>
     
     </div>
     
@@ -9,7 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"></script>
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
 
     </body>
     </html>

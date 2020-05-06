@@ -2,7 +2,7 @@
 $lifetime = time() + (86400 * 30);
 $path = '/';
 session_set_cookie_params($lifetime, $path);
-include 'header.php';
+include 'view/header.php';
 ?>
 <br><br><br>
   <main>
@@ -10,7 +10,7 @@ include 'header.php';
         <h2 class="add">Register</h2>
         <?php 
           if(isset($_SESSION['firstName'])) { ?>
-          <p class="center-text">Welcome, <?php echo $_SESSION['firstName'];?>!  <a href="../controller/index.php">Click Here</a> to go back to the Quotes! database.</p>
+          <p class="center-text">Welcome, <?php echo $_SESSION['firstName'];?>!  <a href="index.php">Click Here</a> to go back to the Quotes! database.</p>
         <?php
           } else { ?>
         <p class="center-text">Please fill out the form below and click the "Register" button to register with Quotes! the database. </p>
@@ -35,7 +35,7 @@ include 'header.php';
 
   if(isset($_GET['Submit'])) {
     $_SESSION['firstName'] = filter_input(INPUT_GET, 'firstName');
-    header("Location: ../view/register.php");
+    header("Location: register.php");
     }
 
    
@@ -45,4 +45,4 @@ include 'header.php';
 
 
 
-<?php include 'footer.php'; ?>
+<?php include 'view/footer.php'; ?>

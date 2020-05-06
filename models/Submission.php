@@ -145,7 +145,7 @@ function submit_quote() {
   if (empty($quote)) { 
     return; }
   $query = 'INSERT INTO Quotes (authorID,categoryID,quote,StatusCode)
-            VALUES (:authorID, :categoryID, :quote, "a")';
+            VALUES (:authorID, :categoryID, :quote, "n")';
   $statement = $db->prepare($query);
   $statement->bindValue(':authorID', $authorID);
   $statement->bindValue(':categoryID', $categoryID);
@@ -154,8 +154,78 @@ function submit_quote() {
   $statement->closeCursor();
 }
 
+//delete quote
+function delete_quote() {
+  global $db;
+  global $quoteID;
+  if (empty($quoteID)) { 
+    return; }
+  $query = 'UPDATE Quotes
+            SET StatusCode = "u"
+            WHERE quoteID = :quoteID';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quoteID', $quoteID);
+  $statement->execute();
+  $statement->closeCursor();}
 
 
+  //view all quotes sent for approval
+function view_submitted_quotes() {
+  global $db;
+  global $quoteID;
+  $query = 'SELECT 
+              q.quoteID,
+              q.quote,
+              a.author,
+              c.category
+            FROM Quotes q
+            LEFT JOIN Authors a ON q.authorID = a.authorID
+            LEFT JOIN Categories c ON q.categoryID = c.categoryID
+            WHERE q.StatusCode = "n"';
+  $statement = $db->prepare($query);
+  $statement->execute();
+  $submitted_quotes = $statement->fetchAll(PDO::FETCH_ASSOC);
+  $statement->closeCursor();
+  return $submitted_quotes;
+  }
+  
+
+  //approve quote
+function approve_quote() {
+  global $db;
+  global $quoteID;
+  if (empty($quoteID)) { 
+    return; }
+  $query = 'UPDATE Quotes
+            SET StatusCode = "a"
+            WHERE quoteID = :quoteID';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':quoteID', $quoteID);
+  $statement->execute();
+  $statement->closeCursor();}
+
+
+  // admin quote submission
+function add_quote() {
+  global $db;
+  global $authorID;
+  global $categoryID;
+  global $quote;
+  if (empty($authorID)) { 
+    return; }
+  if (empty($categoryID)) { 
+    return; }
+  if (empty($quote)) { 
+    return; }
+  $query = 'INSERT INTO Quotes (authorID,categoryID,quote,StatusCode)
+            VALUES (:authorID, :categoryID, :quote, "a")';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':authorID', $authorID);
+  $statement->bindValue(':categoryID', $categoryID);
+  $statement->bindValue(':quote', $quote);
+  $statement->execute();
+  $statement->closeCursor();
+}
 
 ?>
 

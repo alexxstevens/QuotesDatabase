@@ -1,8 +1,9 @@
 <?php 
-include 'header.php';?>
+include 'view/header.php';?>
+<br><br><br>
 
 <br>
-<p class="center-text"><?php if (isset($_SESSION['firstName'])) {?>Thank you for signing out, <?php echo $_SESSION['firstName'];?>!  <?php }?><a href="../controller/index.php">Click Here</a> to view our vehicle inventory.</p>
+<p class="center-text"><?php if (isset($_SESSION['firstName'])) {?>Thank you for signing out, <?php echo $_SESSION['firstName'];?>!  <?php }?><a href="index.php">Click Here</a> to go back to the Quotes! database.</p>
 
 <?php 
 
@@ -20,5 +21,5 @@ $secure = $params['secure'];
 $httponly = $params['httponly'];
 setcookie ($name, '', $expire, $path, $domain, $secure, $httponly);
 
-include 'footer.php';
+include 'view/footer.php';
 ?>

@@ -1,9 +1,11 @@
-<?php include 'header.php';?>
+<?php 
+  require_once('../util/valid_admin.php');
+  include '../view/admin_header.php';?>
 <br>
 <br>
 <?php
 if(isset($_SESSION['firstName'])) {?>
-   <br><h5>Welcome, <?php echo  $_SESSION['firstName'];?>!</h5><?php }?>
+   <br><h5>Welcome, <?php echo  $_SESSION['is_valid_user'];?>!</h5><?php }?>
 <br>
 <h4>Select your search criteria:</h4>
 <section id="dropdowns">
@@ -48,6 +50,7 @@ if(isset($_SESSION['firstName'])) {?>
                                 <th>Category</th>
                                 <th>Quote</th>
                                 <th>Author</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,6 +63,12 @@ if(isset($_SESSION['firstName'])) {?>
                               <td class="main"><?php echo $approved_quote['category']; ?></td>
                               <td class="main">"<?php echo $approved_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $approved_quote['author']; ?></td>
+                              <td><form action="../admin/admin.php" method="post">
+                                    <input type="hidden" name="action" value="delete_quote">
+                                    <input type="hidden" name="quoteID"
+                                        value="<?php echo $approved_quote['quoteID']; ?>">
+                                    <input type="submit" value="Remove" class="button red">
+                                </form></td>
                             </tr>
                           <?php endforeach;} ?>
 
@@ -76,6 +85,12 @@ if(isset($_SESSION['firstName'])) {?>
                               <td class="main"><?php echo $auth_cat_quote['category']; ?></td>
                               <td class="main">"<?php echo $auth_cat_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $auth_cat_quote['author']; ?></td>
+                              <td><form action="../admin/admin.php" method="post">
+                                    <input type="hidden" name="action" value="delete_quote">
+                                    <input type="hidden" name="quoteID"
+                                        value="<?php echo $auth_cat_quote['quoteID']; ?>">
+                                    <input type="submit" value="Remove" class="button red">
+                                </form></td>
                             </tr>
                           <?php endforeach;}} ?>
 
@@ -86,6 +101,12 @@ if(isset($_SESSION['firstName'])) {?>
                               <td class="main"><?php echo $cat_quote['category']; ?></td>
                               <td class="main">"<?php echo $cat_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $cat_quote['author']; ?></td>
+                              <td><form action="../admin/admin.php" method="post">
+                                    <input type="hidden" name="action" value="delete_quote">
+                                    <input type="hidden" name="quoteID"
+                                        value="<?php echo $cat_quote['quoteID']; ?>">
+                                    <input type="submit" value="Remove" class="button red">
+                                </form></td>
                             </tr>
                           <?php endforeach;} ?>
                             
@@ -96,19 +117,15 @@ if(isset($_SESSION['firstName'])) {?>
                               <td class="main"><?php echo $auth_quote['category']; ?></td>
                               <td class="main">"<?php echo $auth_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $auth_quote['author']; ?></td>
+                              <td><form action="../admin/admin.php" method="post">
+                                    <input type="hidden" name="action" value="delete_quote">
+                                    <input type="hidden" name="quoteID"
+                                        value="<?php echo $auth_quote['quoteID']; ?>">
+                                    <input type="submit" value="Remove" class="button red">
+                                </form></td>
                             </tr>
                           <?php endforeach;} ?>
 
-                            <?php if (isset($random_quotes)) { 
-                                foreach ($random_quotes as $random_quote) : ?>
-                            <tr>
-                              <td class="hideID"><?php echo $random_quote['quoteID']; ?></td>
-                              <td class="main"><?php echo $random_quote['category']; ?></td>
-                              <td class="main">"<?php echo $random_quote['quote']; ?>"</td>
-                              <td class="main"><?php echo $random_quote['author']; ?></td>
-                            </tr>
-                          <?php endforeach;} ?>
-                                          
                         </tbody>
                     </table>
                 </div>
@@ -117,4 +134,4 @@ if(isset($_SESSION['firstName'])) {?>
                                   
         </section>
 
-        <?php include 'footer.php';?>
+        <?php include '../view/footer.php';?>
