@@ -1,5 +1,5 @@
 <?php
-    require('config/database.php'); 
+    require('config/Database.php'); 
     require('models/Users.php');
     include('view/admin_header.php');?>
 <br>

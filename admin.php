@@ -1,11 +1,11 @@
 <?php
+    session_start();
     require_once('util/valid_admin.php');
     require('config/Database.php');
     require('models/Author.php');
     require('models/Category.php');
     require('models/Submission.php');
     require('models/Users.php');
-    session_start();
    
    $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
