@@ -2,7 +2,9 @@
     require_once('../util/valid_admin.php');
     include('../view/admin_header.php')
 ?>
-<br><br><br>
+<br><br><br><br>
+<br>
+<br>
 <main>
     <h2>Authors</h2>
     <section>
@@ -31,9 +33,10 @@
             </p>
         <?php } ?>
     </section>
-
+            <br><br>
     <section>
-        <h2>Add Author</h2>
+        <h2 class="contact-container-left">Add Author</h2>
+        <div class="contact-container-left">
         <form action="admin.php" method="post" id="add_author">
             <input type="hidden" name="action" value="add_author">
 
@@ -43,9 +46,10 @@
             <label id="blankLabel">&nbsp;</label>
             <input id="add_author_button" type="submit" class="button blue" value="Add Author"><br>
         </form>
+        </div>
     </section>
 
-<br><br>
+<br><br><hr><br><br>
      <h2>Categories</h2>
     <section>
         <?php if ( sizeof($all_categories) != 0) { ?>
@@ -73,9 +77,10 @@
             </p>
         <?php } ?>
     </section>
-
+            <br><br>
     <section>
-        <h2>Add Author</h2>
+        <h2 class="contact-container-left">Add Category</h2>
+        <div class="contact-container-left">
         <form action="admin.php" method="post" id="add_category">
             <input type="hidden" name="action" value="add_category">
 
@@ -86,5 +91,7 @@
             <input id="add_category_button" type="submit" class="button blue" value="Add Category"><br>
         </form>
     </section>
+        </div>
+        <br>
     <?php include '../view/footer.php'; ?>
 </main>

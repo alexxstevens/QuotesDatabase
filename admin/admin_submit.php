@@ -1,8 +1,9 @@
-<?php 
+<?php  
   require_once('../util/valid_admin.php');
   include('../view/admin_header.php');
 ?>
-<br><br><br>
+<br><br><br><br>
+
     <main>
         <BR>
         <h2 class="contact-container">Add Quote</h2><br>
@@ -41,8 +42,7 @@
         <div>
             <p><a class="link" href="admin.php?action=show_quotes">Return to Quotes! the database</a></p>
         </div>
-        <br>
-    </main>
+        </main>
 
 <?php include '../view/footer.php'; ?>
 

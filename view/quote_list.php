@@ -1,6 +1,6 @@
 <?php include 'header.php';?>
 <br>
-<br>
+<br><br><br>
 <?php
 if(isset($_SESSION['firstName'])) {?>
    <br><h5>Welcome, <?php echo  $_SESSION['firstName'];?>!</h5><?php }?>

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quote Database</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/userstyle.css">
 
-
+ 
 </head>
 
 
@@ -21,8 +21,8 @@ session_start()
     <nav class="nav affix">
       <div class="container">
         <div class="logo">
-          <a href="index.php"><img src="images/logo.png" id="logo" alt=" Logo" height="130"
-              width="130"></a>
+          <a href="index.php"><img src="images/logo.png" id="logo" alt=" Logo" height="200"
+              width="200"></a>
           <h1>Quotes! the database</h1>
         </div>
 

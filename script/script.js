@@ -1,3 +1,5 @@
+
+
 // responsive nav
 $('.navTrigger').click(function () {
   $(this).toggleClass('active');
@@ -5,4 +7,3 @@ $('.navTrigger').click(function () {
   $("#mainListDiv").toggleClass("show_list");
   $("#mainListDiv").fadeIn();
 });
-

@@ -4,7 +4,7 @@ $path = '/';
 session_set_cookie_params($lifetime, $path);
 include 'view/header.php';
 ?>
-<br><br><br>
+<br><br><br><br><br>
   <main>
 
         <h2 class="add">Register</h2>
@@ -15,14 +15,16 @@ include 'view/header.php';
           } else { ?>
         <p class="center-text">Please fill out the form below and click the "Register" button to register with Quotes! the database. </p>
         <div class="add">
+          <div class="contact-container">
             <form action="" method="get" id="register_form">
                 <input type="hidden" name="action" value="register">
-                <label>Please enter your first name:</label>
+                <label>Please enter your first name:</label><br>
                 <input type="text" name="firstName" max="30" required><br>
                 <label>&nbsp;</label>
                 <input type="submit" value="Register" name="Submit" class="button blue"><br>
             </form>
           </div> 
+          </div>
           <?php 
           }
           ?>

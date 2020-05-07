@@ -3,10 +3,9 @@
   include '../view/admin_header.php';?>
 <br>
 <br><br>
-<br>
+<br><br><br><br>
 <h4>Quotes Submitted for Approval:</h4>
-
-            <br>
+<br>
       
 <section>
          <?php if (!empty($submitted_quotes)) {?>
@@ -56,5 +55,5 @@
                  
                                   
         </section>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
         <?php include '../view/footer.php';?>

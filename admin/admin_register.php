@@ -50,22 +50,25 @@
     
 ?>
 <?php include '../view/admin_header.php'; ?>
-<br><br><br>
+<br><br><br><br>
+<br>
 <main id="admin-login">
-    <h2>Register a new admin user</h2>
+     
+    <h2 class="contact-container">Register a New Admin User</h2><br>
+    <div class="contact-container">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div>
-            <label for="username">Username:<sup>*</sup></label>
+            <label for="username">Username:<sup>*</sup></label><br>
             <input type="text" name="username" id="username" autofocus>
             <span class="error_message"><?php if(!empty($error_username)) echo $error_username; ?></span>
         </div>
         <div>
-            <label for="password">Password:<sup>*</sup></label>
+            <label for="password">Password:<sup>*</sup></label><br>
             <input type="password" name="password" id="password" title="Must contain at least 5 or more characters">
             <span class="error_message"><?php if(!empty($error_password)) echo $error_password; ?></span>
         </div>
         <div>
-            <label for="confirm_password">Confirm Password:<sup>*</sup></label>
+            <label for="confirm_password">Confirm Password:<sup>*</sup></label><br>
             <input type="password" name="confirm_password" id="confirm_password" title="Must contain at least 5 or more characters">
             <span class="error_message"><?php if(!empty($error_password_confirmation)) echo $error_password_confirmation; ?></span>
         </div>
@@ -76,5 +79,6 @@
             <p><sup>*</sup> Indicates a required field.</p>
         </div>
     </form>
-</main>
+</div>
+</main><br><br><br><br><br><br><br><br><br>
 <?php include '../view/footer.php'; ?>

@@ -2,7 +2,9 @@
     require('../config/database.php'); 
     require('../models/Users.php');
     include('../view/admin_header.php');?>
-    <br><br><br>
+<br>
+<br><br><br><br>
+<br>
  <main>
         <BR>
 
@@ -25,6 +27,7 @@
             </form><br>
             <p>* Indicates a required field.</p>
           </div> 
+          <br><br><br>
 
 
 <?php
@@ -85,5 +88,5 @@
 ?>
 
 
-<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <?php include '../view/footer.php'; ?>

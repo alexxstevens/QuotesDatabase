@@ -2,10 +2,7 @@
   require_once('../util/valid_admin.php');
   include '../view/admin_header.php';?>
 <br>
-<br>
-<?php
-if(isset($_SESSION['firstName'])) {?>
-   <br><h5>Welcome, <?php echo  $_SESSION['is_valid_user'];?>!</h5><?php }?>
+<br><br><br><br>
 <br>
 <h4>Select your search criteria:</h4>
 <section id="dropdowns">

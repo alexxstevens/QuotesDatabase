@@ -1,5 +1,5 @@
 <?php include 'view/header.php'; ?>
-<br><br><br>
+<br><br><br><br>
     <main>
         <BR>
         <h2 class="contact-container">Join our Quotes! the database family.  Submit a Quote for Approval!</h2><br>
