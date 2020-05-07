@@ -6,7 +6,7 @@
 <br>
 <h4>Select your search criteria:</h4>
 <section id="dropdowns">
-    <form action="index.php" method="GET" id="quote_filters">
+    <form action="admin.php" method="GET" id="quote_filters">
       <div id="authorID_dropdown">
         <select name="authorID" class="custom-select my-1    mr-sm-2" >
           <option  value="" selected>View by Authors</option>
@@ -130,5 +130,5 @@
                  
                                   
         </section>
-
+<br>
         <?php include '../view/footer.php';?>

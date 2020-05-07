@@ -29,7 +29,7 @@ session_start()
         <div id="mainListDiv" class="main_list">
           <ul class="navlinks">
             <li><a class="nav-link" href="index.php?action=show_add_form">Submit Quote</a></li>
-            <li> <?php 
+            <li id="invisible"> <?php 
                     if(!isset($_SESSION['firstName'])) {?>
                 <a class="nav-link" href="register.php">Register</a> 
             </li>

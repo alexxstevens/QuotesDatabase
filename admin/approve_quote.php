@@ -23,7 +23,7 @@
                         <tbody>
          <?php } ?>
 
-                           <?php if (empty($submitted_quotes)) { var_dump($submitted_quotes)?>
+                           <?php if (empty($submitted_quotes)) { ?>
                              <p>No Results Available</p>
                            <?php } else if (!empty($submitted_quotes)) {
                                 foreach ($submitted_quotes as $submitted_quote) : ?>

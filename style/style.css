@@ -286,6 +286,10 @@ a.link {
 
 
 @media screen and (max-width:750px) {
+    div.contact-container input[type=submit] {
+  width: 50vw;
+}
+
     .nav div.main_list ul li a {
         text-align: center;
         width: 100%;

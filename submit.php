@@ -30,7 +30,7 @@
 
                 <div id="submit">
                 <label>&nbsp;</label>
-                <input type="submit" value="Submit Quote for Approval" class="btn btn-primary"><br>
+                <input type="submit" value="Submit Quote" class="btn btn-primary"><br>
                 </div>
             </form>
         </div>
