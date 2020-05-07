@@ -1,7 +1,7 @@
 <?php
-    require('../config/database.php'); 
-    require('../models/Users.php');
-    include('../view/admin_header.php');?>
+    require('config/database.php'); 
+    require('models/Users.php');
+    include('view/admin_header.php');?>
 <br>
 <br><br><br><br>
 <br>
@@ -89,4 +89,4 @@
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<?php include '../view/footer.php'; ?>
+<?php include 'view/footer.php'; ?>

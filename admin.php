@@ -1,11 +1,11 @@
 <?php
     session_start();
-    require_once('../util/valid_admin.php');
-    require('../config/Database.php');
-    require('../models/Author.php');
-    require('../models/Category.php');
-    require('../models/Submission.php');
-    require('../models/Users.php');
+    require_once('util/valid_admin.php');
+    require('config/Database.php');
+    require('models/Author.php');
+    require('models/Category.php');
+    require('models/Submission.php');
+    require('models/Users.php');
    
    $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
@@ -35,20 +35,20 @@
         if (isset($auth_cat_quotes)) {
           if ($auth_cat_quotes == FALSE) {
             $emptyArray = "There are no results for your selected search criteria.";
-            include_once('../admin/admin_list.php'); 
+            include_once(' admin_list.php'); 
           } else {
-          include_once('../admin/admin_list.php'); }
+          include_once('admin_list.php'); }
         } else {
         $cat_quotes = view_by_category();
         $auth_quotes = view_by_author();
         $random_quotes = view_random(); 
-        include_once('../admin/admin_list.php'); }
+        include_once('admin_list.php'); }
     //call add form
   } else if ($action == 'show_add_form') {
         // call function to populate dropdowns
         $all_authors = get_authors();
         $all_categories = get_categories();
-        include('../admin/admin_submit.php');
+        include('admin_submit.php');
 
     //pull add inputs
   } else if ($action == 'submit_quote') {
@@ -64,7 +64,7 @@
             //invalid inputs
             if ($authorID == NULL || $categoryID == NULL || $quote == NULL) {
                 $error = "Invalid entry. Check all fields and try again.";
-                include('../errors/error.php');
+                include('errors/error.php');
             //add vehicle
             } else {
                 submit_quote();
@@ -84,15 +84,15 @@
         $secure = $params['secure'];
         $httponly = $params['httponly'];
         setcookie ($name, '', $expire, $path, $domain, $secure, $httponly);
-        header("Location: admin_login.php");
+        header("Location:  admin_login.php");
   } else if ($action == 'delete_quote') {
         $quoteID= filter_input(INPUT_POST, 'quoteID', FILTER_VALIDATE_INT);
         if ($quoteID == NULL || $quoteID == FALSE) {
             $error = "Missing or incorrect product id.";
-            include('../errors/error.php');
+            include('errors/error.php');
         } else {
             delete_quote($quoteID);
-            header("Location: ../admin/admin.php"); }
+            header("Location: admin.php"); }
   } else if ($action == 'see_submitted') {
             $submitted_quotes = view_submitted_quotes();
             include_once('approve_quote.php');
@@ -100,7 +100,7 @@
             $quoteID= filter_input(INPUT_POST, 'quoteID', FILTER_VALIDATE_INT);
             if ($quoteID == NULL || $quoteID == FALSE) {
             $error = "Missing or incorrect product id.";
-            include('../errors/error.php');
+            include('errors/error.php');
         } else {
             approve_quote();
             header("Location: admin.php?action=see_submitted"); }
@@ -108,7 +108,7 @@
         $quoteID= filter_input(INPUT_POST, 'quoteID', FILTER_VALIDATE_INT);
         if ($quoteID == NULL || $quoteID == FALSE) {
             $error = "Missing or incorrect product id.";
-            include('../errors/error.php');
+            include('errors/error.php');
         } else {
           delete_quote($quoteID);
           header("Location: admin.php?action=see_submitted"); }
@@ -120,7 +120,7 @@
         $authorID= filter_input(INPUT_POST, 'authorID', FILTER_VALIDATE_INT);
         if ($authorID == NULL || $authorID == FALSE) {
             $error = "Missing or incorrect author id.";
-            include('../errors/error.php');
+            include('errors/error.php');
         } else {
           delete_author($authorID);
           header("Location: admin.php?action=manage"); }
@@ -128,7 +128,7 @@
         $author= filter_input(INPUT_POST, 'author');
         if ($author == NULL || $author == FALSE) {
           $error = "Missing or incorrect author.";
-          include('../errors/error.php');
+          include('errors/error.php');
         } else {
           add_author($author);
           header("Location: admin.php?action=manage"); }
@@ -136,7 +136,7 @@
         $categoryID= filter_input(INPUT_POST, 'categoryID', FILTER_VALIDATE_INT);
         if ($categoryID == NULL || $categoryID == FALSE) {
             $error = "Missing or incorrect author id.";
-            include('../errors/error.php');
+            include('errors/error.php');
         } else {
           delete_category($categoryID);
           header("Location: admin.php?action=manage"); }
@@ -144,7 +144,7 @@
         $category= filter_input(INPUT_POST, 'category');
         if ($category == NULL || $category == FALSE) {
           $error = "Missing or incorrect category id.";
-          include('../errors/error.php');
+          include('errors/error.php');
         } else {
           add_category($category);
           header("Location: admin.php?action=manage"); }
@@ -161,7 +161,7 @@
             //invalid inputs
             if ($authorID == NULL || $categoryID == NULL || $quote == NULL) {
                 $error = "Invalid entry. Check all fields and try again.";
-                include('../errors/error.php');
+                include('errors/error.php');
             //add vehicle
             } else {
                 add_quote();

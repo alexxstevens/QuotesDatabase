@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require_once('../util/valid_admin.php');
-    require('../config/Database.php'); 
-    require('../models/Users.php'); 
+    require_once('util/valid_admin.php');
+    require('config/Database.php'); 
+    require('models/Users.php'); 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = trim(filter_input(INPUT_POST, 'username'));
@@ -49,7 +49,7 @@
     }
     
 ?>
-<?php include '../view/admin_header.php'; ?>
+<?php include 'view/admin_header.php'; ?>
 <br><br><br><br>
 <br>
 <main id="admin-login">
@@ -81,4 +81,4 @@
     </form>
 </div>
 </main><br><br><br><br><br><br><br><br><br>
-<?php include '../view/footer.php'; ?>
+<?php include 'view/footer.php'; ?>

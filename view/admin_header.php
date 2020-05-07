@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quote Database</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
       <!-- required -->
 
 
@@ -19,7 +19,7 @@
     <nav class="nav affix">
       <div class="container">
         <div class="logo">
-          <a href="../admin/admin.php"><img src="../images/logo.png" id="logo" alt=" Logo" height="200"
+          <a href="admin.php"><img src="images/logo.png" id="logo" alt=" Logo" height="200"
               width="200"></a>
           <h1>Quotes! the database</h1>
         </div>
@@ -34,7 +34,7 @@
      <?php } else { ?>
             <li class="admin"><a class="nav-link" href="admin.php?action=show_add_form">Submit Quote</a></li>
             
-            <li class="admin"><a class="nav-link" href="../admin/admin_register.php">Register Admin</a></li>
+            <li class="admin"><a class="nav-link" href=" admin_register.php">Register Admin</a></li>
 
             <li class="admin"><a class="nav-link" href="admin.php?action=see_submitted">Approve Quotes</a></li>
 

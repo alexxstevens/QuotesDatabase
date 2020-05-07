@@ -1,6 +1,6 @@
 <?php 
-  require_once('../util/valid_admin.php');
-  include '../view/admin_header.php';?>
+  require_once('util/valid_admin.php');
+  include 'view/admin_header.php';?>
 <br>
 <br><br><br><br>
 <br>
@@ -60,7 +60,7 @@
                               <td class="main"><?php echo $approved_quote['category']; ?></td>
                               <td class="main">"<?php echo $approved_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $approved_quote['author']; ?></td>
-                              <td><form action="../admin/admin.php" method="post">
+                              <td><form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_quote">
                                     <input type="hidden" name="quoteID"
                                         value="<?php echo $approved_quote['quoteID']; ?>">
@@ -82,7 +82,7 @@
                               <td class="main"><?php echo $auth_cat_quote['category']; ?></td>
                               <td class="main">"<?php echo $auth_cat_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $auth_cat_quote['author']; ?></td>
-                              <td><form action="../admin/admin.php" method="post">
+                              <td><form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_quote">
                                     <input type="hidden" name="quoteID"
                                         value="<?php echo $auth_cat_quote['quoteID']; ?>">
@@ -98,7 +98,7 @@
                               <td class="main"><?php echo $cat_quote['category']; ?></td>
                               <td class="main">"<?php echo $cat_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $cat_quote['author']; ?></td>
-                              <td><form action="../admin/admin.php" method="post">
+                              <td><form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_quote">
                                     <input type="hidden" name="quoteID"
                                         value="<?php echo $cat_quote['quoteID']; ?>">
@@ -114,7 +114,7 @@
                               <td class="main"><?php echo $auth_quote['category']; ?></td>
                               <td class="main">"<?php echo $auth_quote['quote']; ?>"</td>
                               <td class="main"><?php echo $auth_quote['author']; ?></td>
-                              <td><form action="../admin/admin.php" method="post">
+                              <td><form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_quote">
                                     <input type="hidden" name="quoteID"
                                         value="<?php echo $auth_quote['quoteID']; ?>">
@@ -131,4 +131,4 @@
                                   
         </section>
 <br>
-        <?php include '../view/footer.php';?>
+        <?php include 'view/footer.php';?>

@@ -1,6 +1,6 @@
 <?php 
-    require_once('../util/valid_admin.php');
-    include('../view/admin_header.php')
+    require_once('util/valid_admin.php');
+    include('view/admin_header.php')
 ?>
 <br><br><br><br>
 <br>
@@ -93,5 +93,5 @@
     </section>
         </div>
         <br>
-    <?php include '../view/footer.php'; ?>
+    <?php include 'view/footer.php'; ?>
 </main>
