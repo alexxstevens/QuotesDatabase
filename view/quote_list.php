@@ -4,7 +4,7 @@
 <?php
 if(isset($_SESSION['firstName'])) {?>
    <br><h5>Welcome, <?php echo  $_SESSION['firstName'];?>!</h5><?php }?>
-<br>
+<br><br><br><br>
 <h4>Select your search criteria:</h4>
 <section id="dropdowns">
     <form action="index.php" method="GET" id="quote_filters">
