@@ -5,7 +5,7 @@
 <br><br><br><br>
 <br>
 <h4>Select your search criteria:</h4>
-<section id="dropdowns">
+<div id="dropdowns">
     <form action="admin.php" method="GET" id="quote_filters">
       <div id="authorID_dropdown">
         <select name="authorID" class="custom-select my-1    mr-sm-2" >
@@ -27,7 +27,7 @@
         </select>
       </div>
 
-</section>
+          </div>
 
         <div id="submit">
           <input class="btn btn-primary" type="submit" value="Submit">

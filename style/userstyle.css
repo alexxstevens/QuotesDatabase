@@ -16,12 +16,10 @@ footer#footer {
     position: fixed;
     line-height: 160px;
     z-index: 1;
-    font-size: 1.2em;
-    z-index: 4000;
-}
+    font-size: 1.2em;}
 
-section#dropdownss select {
-    z-index: 6000;
+div#dropdowns  {
+    z-index: 4000;
 }
 
 div.logo {
@@ -57,6 +55,8 @@ div.logo {
     text-shadow: 1px 1px black;
     font-weight: bold;
     overflow: hidden;
+    z-index: 2000;
+    display: inline;
 }
 
 li.admin a.nav-link {

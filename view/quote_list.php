@@ -1,12 +1,12 @@
 <?php include 'header.php';?>
 <br>
-<br><br><br>
+<br>
 <?php
 if(isset($_SESSION['firstName'])) {?>
    <br><h5>Welcome, <?php echo  $_SESSION['firstName'];?>!</h5><?php }?>
 <br><br><br><br>
 <h4>Select your search criteria:</h4>
-<section id="dropdowns">
+<div id="dropdowns">
     <form action="index.php" method="GET" id="quote_filters">
       <div id="authorID_dropdown">
         <select name="authorID" class="custom-select my-1    mr-sm-2" >
@@ -28,7 +28,7 @@ if(isset($_SESSION['firstName'])) {?>
         </select>
       </div>
 
-</section>
+          </div>
 
         <div id="submit">
           <input class="btn btn-primary" type="submit" value="Submit">
