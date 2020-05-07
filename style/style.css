@@ -33,7 +33,7 @@ div.logo {
     height: 100px;
 }
 
-section#dropdowns {
+section#dropdowns select{
     z-index: 6000;
 }
 
